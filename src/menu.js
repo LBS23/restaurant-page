@@ -164,6 +164,7 @@ export default (() => {
   hotBtn.textContent = "Hot Rolls";
   menuHeader.append(appetizerBtn, avocadoBtn, cheeseBtn, hotBtn);
   menuContainer.append(menuHeader, menuBody);
+  menuBody.append(appetizerDiv);
   appetizerBtn.addEventListener("click", () => displayChild(appetizerDiv));
   avocadoBtn.addEventListener("click", () => displayChild(avocadoDiv));
   cheeseBtn.addEventListener("click", () => displayChild(cheeseDiv));
