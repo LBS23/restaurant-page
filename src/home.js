@@ -2,7 +2,7 @@ export default (() => {
     const homeContainer = document.createElement("div");
     const header = document.createElement("div");
     const title = document.createElement("h1");
-    title.textContent = "Sushi Good";
+    title.textContent = "Dear Sushi";
     header.classList.add("container-header", "title");
     header.appendChild(title);
     const body = document.createElement("div");
