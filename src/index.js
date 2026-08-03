@@ -2,6 +2,7 @@ import home from "./home.js";
 import menuPage from "./menu.js";
 import about from "./about.js";
 import contactPage from "./contact.js";
+import "./styles.css";
 
 console.log("Webpack running correctly!");
 

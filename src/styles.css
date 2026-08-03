@@ -1,0 +1,30 @@
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav > button {
+    padding: 10px;
+    background-color: black;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-family: inherit;
+    color: white;
+}
+
+button:hover {
+    background-color: lightgrey;
+    color: black;
+}
