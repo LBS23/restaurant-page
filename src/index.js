@@ -1,7 +1,7 @@
 import home from "./home.js";
-import menu from "./menu.js";
+import menuPage from "./menu.js";
 import about from "./about.js";
-
+import contactPage from "./contact.js";
 
 console.log("Webpack running correctly!");
 
@@ -17,8 +17,12 @@ homeBtn.addEventListener("click", () => {
     div.replaceChildren(home);
 })
 menuBtn.addEventListener("click", () => {
-    div.replaceChildren(menu);
+    div.replaceChildren(menuPage());
 })
 aboutBtn.addEventListener("click", () => {
     div.replaceChildren(about);
+})
+
+contactBtn.addEventListener("click", () => {
+    div.replaceChildren(contactPage());
 })
