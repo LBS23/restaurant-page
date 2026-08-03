@@ -7,7 +7,7 @@ export default (() => {
     header.appendChild(title);
     const body = document.createElement("div");
     const bodyContent = document.createElement("p");
-    bodyContent.textContent = "Here on Sushi Good, we offer you the best nikkei infusion available in the entire region, come and check out our menu!";
+    bodyContent.textContent = "Here on Dear Sushi, we offer you the best nikkei infusion available in the entire region, come and check out our menu!";
     body.classList.add("container-body", "intro");
     body.appendChild(bodyContent);
     homeContainer.append(header, body);
