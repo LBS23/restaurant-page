@@ -111,6 +111,24 @@ const hot3 = {
   ingredients: ["Shrimp", "Cream Cheese", "Chives", "Wrapped in Panko"],
   price: "$6.60",
 };
+
+function createCard(obj) {
+  const totalIngredients = obj.ingredients.length;
+  const card = document.createElement("div");
+  const cardName = document.createElement("div");
+  const cardPrice = document.createElement("div");
+  const cardIngredients = document.createElement("div");
+  cardName.textContent = obj.name;
+  cardPrice.textContent = obj.price;
+  for (let i = 0; i < totalIngredients; i++) {
+    const ingredient = document.createElement("span");
+    ingredient.textContent = obj.ingredients[i];
+    cardIngredients.appendChild(ingredient);
+  }
+  card.append(cardName, cardPrice, cardIngredients);
+  return card;
+}
+
 appetizerBody.append(
     createCard(appetizer1),
     createCard(appetizer2),
@@ -133,24 +151,8 @@ appetizerBody.append(
   )
 
 
-function createCard(obj) {
-  const totalIngredients = obj.ingredients.length;
-  const card = document.createElement("div");
-  const cardName = document.createElement("div");
-  const cardPrice = document.createElement("div");
-  const cardIngredients = document.createElement("div");
-  cardName.textContent = obj.name;
-  cardPrice.textContent = obj.price;
-  for (let i = 0; i < totalIngredients; i++) {
-    const ingredient = document.createElement("span");
-    ingredient.textContent = obj.ingredients[i];
-    cardIngredients.appendChild(ingredient);
-  }
-  card.append(cardName, cardPrice, cardIngredients);
-  return card;
-}
 
-export default (() => {
+export default function createMenuPage()  {
   appetizerDiv.append(appetizerTitle, appetizerBody);
   avocadoDiv.append(avocadoTitle, avocadoBody);
   cheeseDiv.append(cheeseTitle, cheeseBody);
@@ -164,10 +166,10 @@ export default (() => {
   hotBtn.textContent = "Hot Rolls";
   menuHeader.append(appetizerBtn, avocadoBtn, cheeseBtn, hotBtn);
   menuContainer.append(menuHeader, menuBody);
-  menuBody.append(appetizerDiv);
+  menuBody.replaceChildren(appetizerDiv);
   appetizerBtn.addEventListener("click", () => displayChild(appetizerDiv));
   avocadoBtn.addEventListener("click", () => displayChild(avocadoDiv));
   cheeseBtn.addEventListener("click", () => displayChild(cheeseDiv));
   hotBtn.addEventListener("click", () => displayChild(hotDiv));
   return menuContainer;
-})();
+};
