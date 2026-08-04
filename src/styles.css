@@ -12,19 +12,133 @@ body {
 
 nav {
     display: flex;
-    justify-content: space-around;
+    align-items: stretch;
+    justify-content: space-evenly;
 }
 
-nav > button {
-    padding: 10px;
-    background-color: black;
-    border: none;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+button {
     font-family: inherit;
+    background-color: black;
     color: white;
+}
+nav > button {
+    padding: 25px;
+    flex: 1 1 auto;
+    font-size: 2rem;
+    border-top: none;
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 button:hover {
     background-color: lightgrey;
     color: black;
+    cursor: pointer;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-header {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.container-body {
+    font-size: 1.5rem;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    margin: 100px;
+}   
+
+.menu {
+    display:flex;
+    flex-direction: column;
+    margin-top: 15px;
+    width: 100%;
+    gap: 4px;
+    text-align: center;
+}
+
+.menu-nav {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    text-align: center;
+    flex: 1 1 auto;
+}
+
+.menu-nav > button {
+    padding: 25px;
+    font-size: 1.2rem;
+    border: none; 
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-nav > button:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.2);
+    cursor: pointer;
+    text-decoration:underline;
+    border-radius: 5px;
+}
+
+.menu-title {
+    font-size: 2rem;
+    text-decoration: underline;
+}
+
+.menu-body > div {  /* I DONT UNDERSTAND WHERE THIS DIV CAME FROM */
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+}
+
+.cards-container {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-item {
+    padding: 10px 0 10px 0;
+    width: 600px;
+    border-bottom: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card-item:last-of-type {
+    border: none;
+}
+
+.card-ingredients {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.ingredient {
+    text-align: center;
+    border-right: 2px dotted white;
+    padding: 5px;
+}
+
+.ingredient:last-of-type {
+    border: none;
 }

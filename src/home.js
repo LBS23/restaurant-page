@@ -1,5 +1,6 @@
 export default (() => {
     const homeContainer = document.createElement("div");
+    homeContainer.classList.add("home-container");
     const header = document.createElement("div");
     const title = document.createElement("h1");
     title.textContent = "Dear Sushi";

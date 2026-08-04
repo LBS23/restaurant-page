@@ -1,29 +1,41 @@
 function displayChild(newChild) {
-    menuBody.replaceChildren(newChild);
-  }
-  const menuContainer = document.createElement("div");
-  const menuHeader = document.createElement("div");
-  const menuBody = document.createElement("div");
-  const appetizerBtn = document.createElement("button");
-  const appetizerDiv = document.createElement("div");
-  const appetizerTitle = document.createElement("h2");
-  appetizerTitle.textContent = "Appetizer";
-  const appetizerBody = document.createElement("div");
-  const avocadoBtn = document.createElement("button");
-  const avocadoDiv = document.createElement("div");
-  const avocadoTitle = document.createElement("h2");
-  avocadoTitle.textContent = "Avocado Rolls";
-  const avocadoBody = document.createElement("div");
-  const cheeseBtn = document.createElement("button");
-  const cheeseDiv = document.createElement("div");
-  const cheeseTitle = document.createElement("h2");
-  cheeseTitle.textContent = "Cheese Rolls";
-  const cheeseBody = document.createElement("div");
-  const hotBtn = document.createElement("button");
-  const hotDiv = document.createElement("div");
-  const hotTitle = document.createElement("h2");
-  hotTitle.textContent = "Hot Rolls";
-  const hotBody = document.createElement("div");
+  menuBody.replaceChildren(newChild);
+}
+
+const menuContainer = document.createElement("div");
+menuContainer.classList.add("menu");
+const menuHeader = document.createElement("div");
+menuHeader.classList.add("menu-nav");
+const menuBody = document.createElement("div");
+menuBody.classList.add("menu-body");
+const appetizerBtn = document.createElement("button");
+const appetizerDiv = document.createElement("div");
+const appetizerTitle = document.createElement("h2");
+appetizerTitle.classList.add("menu-title");
+appetizerTitle.textContent = "Appetizer";
+const appetizerBody = document.createElement("div");
+appetizerBody.classList.add("cards-container");
+const avocadoBtn = document.createElement("button");
+const avocadoDiv = document.createElement("div");
+const avocadoTitle = document.createElement("h2");
+avocadoTitle.classList.add("menu-title");
+avocadoTitle.textContent = "Avocado Rolls";
+const avocadoBody = document.createElement("div");
+avocadoBody.classList.add("cards-container")
+const cheeseBtn = document.createElement("button");
+const cheeseDiv = document.createElement("div");
+const cheeseTitle = document.createElement("h2");
+cheeseTitle.classList.add("menu-title");
+cheeseTitle.textContent = "Cheese Rolls";
+const cheeseBody = document.createElement("div");
+cheeseBody.classList.add("cards-container");
+const hotBtn = document.createElement("button");
+const hotDiv = document.createElement("div");
+const hotTitle = document.createElement("h2");
+hotTitle.classList.add("menu-title");
+hotTitle.textContent = "Hot Rolls";
+const hotBody = document.createElement("div");
+hotBody.classList.add("cards-container");
 const appetizer1 = {
   name: "Tuna Tartar",
   ingredients: ["Tuna", "Avocado", "Chives", "Sesame Oil", "Soy Sauce"],
@@ -115,13 +127,18 @@ const hot3 = {
 function createCard(obj) {
   const totalIngredients = obj.ingredients.length;
   const card = document.createElement("div");
+  card.classList.add("card-item");
   const cardName = document.createElement("div");
+  cardName.classList.add("card-name");
   const cardPrice = document.createElement("div");
+  cardPrice.classList.add("card-price");
   const cardIngredients = document.createElement("div");
+  cardIngredients.classList.add("card-ingredients");
   cardName.textContent = obj.name;
   cardPrice.textContent = obj.price;
   for (let i = 0; i < totalIngredients; i++) {
     const ingredient = document.createElement("span");
+    ingredient.classList.add("ingredient");
     ingredient.textContent = obj.ingredients[i];
     cardIngredients.appendChild(ingredient);
   }
@@ -130,36 +147,32 @@ function createCard(obj) {
 }
 
 appetizerBody.append(
-    createCard(appetizer1),
-    createCard(appetizer2),
-    createCard(appetizer3),
-  );
-  avocadoBody.append(
-    createCard(avocado1),
-    createCard(avocado2),
-    createCard(avocado3),
-  );
-  cheeseBody.append(
-    createCard(cheese1),
-    createCard(cheese2),
-    createCard(cheese3),
-  )
-  hotBody.append(
-    createCard(hot1),
-    createCard(hot2),
-    createCard(hot3),
-  )
+  createCard(appetizer1),
+  createCard(appetizer2),
+  createCard(appetizer3),
+);
+avocadoBody.append(
+  createCard(avocado1),
+  createCard(avocado2),
+  createCard(avocado3),
+);
+cheeseBody.append(
+  createCard(cheese1),
+  createCard(cheese2),
+  createCard(cheese3),
+);
+hotBody.append(
+  createCard(hot1),
+  createCard(hot2),
+  createCard(hot3));
 
-
-
-export default function createMenuPage()  {
+export default function createMenuPage() {
   appetizerDiv.append(appetizerTitle, appetizerBody);
   avocadoDiv.append(avocadoTitle, avocadoBody);
   cheeseDiv.append(cheeseTitle, cheeseBody);
   hotDiv.append(hotTitle, hotBody);
   hotTitle.textContent = "Hot Rolls";
   menuHeader.classList.add("menu-header");
-  menuBody.classList.add("menu-body");
   appetizerBtn.textContent = "Appetizers";
   avocadoBtn.textContent = "Avocado Rolls";
   cheeseBtn.textContent = "Cheese Rolls";
@@ -172,4 +185,4 @@ export default function createMenuPage()  {
   cheeseBtn.addEventListener("click", () => displayChild(cheeseDiv));
   hotBtn.addEventListener("click", () => displayChild(hotDiv));
   return menuContainer;
-};
+}
